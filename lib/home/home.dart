@@ -4,7 +4,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   late DateTime currentBackPressTime = xTime;
 
-  // late final WebViewController myWebViewController;
+  late WebViewController myWebViewController;
   bool isWebViewLoading = true;
   bool showHome = true;
 
@@ -31,31 +31,16 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     checkUserConnection();
 
-    // late final PlatformWebViewControllerCreationParams params;
-    // if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-    //   params = WebKitWebViewControllerCreationParams(
-    //     allowsInlineMediaPlayback: true,
-    //     mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-    //   );
-    // } else {
-    //   params = const PlatformWebViewControllerCreationParams();
-    // }
-    //
-    // final WebViewController webViewController =
-    //     WebViewController.fromPlatformCreationParams(params);
-
-    // myWebViewController
-    //   ..loadRequest(Uri.parse('https://mbvt.netlify.app/'))
-    //   ..setJavaScriptMode(JavaScriptMode.unrestricted)
-    //   ..setNavigationDelegate(NavigationDelegate(onPageFinished: (url) {
-    //     Future.delayed(const Duration(seconds: 3)).then((value) {
-    //       setState(() {
-    //         isWebViewLoading = false;
-    //       });
-    //     });
-    //   }));
-
-    // myWebViewController = webViewController;
+    myWebViewController = WebViewController()
+      ..loadRequest(Uri.parse('https://mbvt.netlify.app/'))
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(NavigationDelegate(onPageFinished: (url) {
+        Future.delayed(const Duration(seconds: 3)).then((value) {
+          setState(() {
+            isWebViewLoading = false;
+          });
+        });
+      }));
 
     super.initState();
   }
@@ -98,13 +83,13 @@ class _HomeScreenState extends State<HomeScreen>
       },
       child: Stack(
         children: [
-          // Positioned(
-          //   top: statusBarHeight,
-          //   child: SizedBox(
-          //       height: maxHeight - statusBarHeight,
-          //       width: maxWidth,
-          //       child: WebViewWidget(controller: myWebViewController)),
-          // ),
+          Positioned(
+            top: statusBarHeight,
+            child: SizedBox(
+                height: maxHeight - statusBarHeight,
+                width: maxWidth,
+                child: WebViewWidget(controller: myWebViewController)),
+          ),
           Visibility(
               visible: showHome,
               child: Container(
