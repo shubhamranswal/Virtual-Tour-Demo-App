@@ -10,11 +10,6 @@ Welcome to the **Virtual Tour Webview**! 🚀 This Flutter project offers an imm
 - **Interactive Elements**: Engage with locations through fun touch interactions! 🤳
 - **Cross-Platform Support**: Built with Flutter, available on both Android and iOS! 📱💻
 
-## Screenshots 📸
-
-![Screenshot 1](path_to_screenshot1.png)
-![Screenshot 2](path_to_screenshot2.png)
-
 ## Installation 🚀
 
 Get started with the Virtual Tour Webview in just a few steps:
