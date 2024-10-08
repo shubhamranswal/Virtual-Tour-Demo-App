@@ -67,7 +67,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or support, feel free to reach out:
 
-- Email: [your-email@example.com]
+- Email: [shubhamranswal@gmail.com]
 
 ---
 
