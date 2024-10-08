@@ -1,5 +1,3 @@
-# virtual_tour_webview
-
 # 🌍 Virtual Tour Webview 🌍
 
 Welcome to the **Virtual Tour Webview**! 🚀 This Flutter project offers an immersive experience, allowing you to explore a virtual world right from your mobile screen—think of it as a customized version of Google Earth! 🌐✨
@@ -14,7 +12,7 @@ Welcome to the **Virtual Tour Webview**! 🚀 This Flutter project offers an imm
 
 ## Installation 🚀
 
-Get started with the VVirtual Tour Webview App in just a few steps:
+Get started with the VVirtual Tour Webview in just a few steps:
 
 1. **Clone the repository**:
    ```bash
